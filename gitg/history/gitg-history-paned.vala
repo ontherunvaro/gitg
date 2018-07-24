@@ -53,27 +53,6 @@ class Paned : Gitg.AnimatedPaned
 			if (d_paned_panels.orientation != value)
 			{
 				d_paned_panels.orientation = value;
-
-				// Swap children
-				d_paned_panels.remove(d_scrolled_window_commit_list);
-				d_paned_panels.remove(d_stack_panel);
-
-				Gtk.Widget p1;
-				Gtk.Widget p2;
-
-				if (value == Gtk.Orientation.HORIZONTAL)
-				{
-					p1 = d_stack_panel;
-					p2 = d_scrolled_window_commit_list;
-				}
-				else
-				{
-					p1 = d_scrolled_window_commit_list;
-					p2 = d_stack_panel;
-				}
-
-				d_paned_panels.pack1(p1, true, true);
-				d_paned_panels.pack2(p2, false, false);
 			}
 		}
 	}
